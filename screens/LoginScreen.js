@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native'
 import { Button, Image, Input}  from 'react-native-elements'
+import {StatusBar} from 'expo-status-bar'
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -10,10 +11,11 @@ const LoginScreen = () => {
         console.log("Sign In Pressed!")
     }
     const onRegister = () => {
-
+        navigation.navigate('Register')
     }
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
+            <StatusBar style="light" />
             <Image 
                 source={{
                     uri: "https://wallpaperaccess.com/full/3102346.jpg"
